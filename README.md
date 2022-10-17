@@ -11,7 +11,7 @@ Authors:  Alexander H. Laperle* 1, Alexandra Moser* 1, Veronica J. Garcia 1,
 
 Affiliations: 1 Cedars-Sinai Board of Governors Regenerative Medicine
               Institute, Cedars-Sinai Medical Center, Los Angeles CA
- * These authors contributed equally to this work
+ '* These authors contributed equally to this work
  ** Corresponding author email:  Clive.Svendsen@cshs.org
 
 
