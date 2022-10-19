@@ -46,10 +46,12 @@
 #   A) Script makes use of the variables set up under "project information" as 
 #      well as additional "prefixes" throughout the script for ease of saving
 #      files with a similar path and naming structure.  When reloading data 
-#      (see note "B"), you must either use the full path or reload the prefixs
+#      (see note "B"), you must either use the full path or reload the prefixes.
 #   B) Script saves intermediate steps at each major manipulation of the seurat
-#      object.  These are not required for analysis, and they can be skipped to 
-#      save time and disk space.
+#      object via the "saveRDS" function.  If needed, these RDS objects can then 
+#      be reloaded to easily restart at one of these save points without needing 
+#      to start from scratch.  However, these are not required for analysis, and
+#      they can be skipped to save time and disk space.
 ##
 
 #### Sample Information #### 
