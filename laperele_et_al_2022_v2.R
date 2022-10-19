@@ -21,17 +21,17 @@
 #### Title and Authors ####
 
 ##
-# Title: iPSC-derived neural progenitor cells secreting GDNF slow disease 
-#        progression in rodent models of both ALS and Retinal degeneration  
-# Authors:  Alexander H. Laperle*1, Alexandra Moser*1, Veronica J. Garcia 1, 
-#           Amanda Wu 1, Aaron Fulton 1, George Lawless 1, Shaughn Bell 1, 
-#           Kristina Roxas 1, Roksana Elder 1, Pablo Avalos 1, Bin Lu 1, 
-#           Staphany Ramirez 1, Shaomei Wang 1, Clive N. Svendsen**1 
-#
-# Affiliations: 1 Cedars-Sinai Board of Governors Regenerative Medicine 
+# Title: iPSC-derived neural progenitor cells secreting GDNF slow disease
+#        progression in rodent models of both ALS and Retinal degeneration
+# Authors:  Alexander H. Laperle*1, Alexandra Moser*1, Veronica J. Garcia 1,
+#           Amanda Wu 1, Aaron Fulton 1, George Lawless 1, Shaughn Bell 1,
+#           Kristina Roxas 1, Roksana Elder 1, Pablo Avalos 1, Bin Lu 1,
+#           Staphany Ramirez 1, Shaomei Wang 1, Clive N. Svendsen**1
+# 
+# Affiliations: 1 Cedars-Sinai Board of Governors Regenerative Medicine
 #                 Institute, Cedars-Sinai Medical Center, Los Angeles CA
-# *These authors contributed equally to this work 
-# **Corresponding author email:  Clive.Svendsen@cshs.org 
+# *These authors contributed equally to this work
+# **Corresponding author email:  Clive.Svendsen@cshs.org
 ##
 
 #### Script Information ####
@@ -49,7 +49,7 @@
 #      (see note "B"), you must either use the full path or reload the prefixs
 #   B) Script saves intermediate steps at each major manipulation of the seurat
 #      object.  These are not required for analysis, and they can be skipped to 
-#      save time and disk space.. 
+#      save time and disk space.
 ##
 
 #### Sample Information #### 
@@ -727,12 +727,22 @@ DimPlot(s.integrated,
 hirestiff(paste0(prefixPCres,"_UMAP","_by_","lot","_hires.tiff"))
 lowrestiff(paste0(prefixPCres,"_UMAP","_by_","lot","_lowres.tiff"))
 
+# fix cluster colors
+clust_cols <- c("0"="#F8766D","1"="#DB8E00","2"="#AEA200",
+                "3"="#64B200","4"="#00BD5C","5"="#00C1A7",
+                "6"="#00BADE","7"="#00A6FF","8"="#B385FF",
+                "9"="#EF67EB","10"="#FF63B6")
+
+# for loop for saving split plots in the same dimensions as composite plot
+# using the fixed cluster color scheme
+
 for (i in 1:length(levels(s.integrated$Lot))){
   p <- (DimPlot(s.integrated, 
                 reduction = "umap", 
                 label = FALSE, 
                 pt.size = .25, 
-                cells = c(WhichCells(s.integrated, expression = Lot == levels(s.integrated$Lot)[i]))) + 
+                cells = c(WhichCells(s.integrated, expression = Lot == levels(s.integrated$Lot)[i])),
+                cols = clust_cols) + 
           NoLegend() +
           ggtitle(paste0(levels(s.integrated$Lot)[i])))
   
@@ -787,14 +797,23 @@ hirestiff(paste0(prefixPCres,"_Fig","_1b_","_hires.tiff"))
 lowrestiff(paste0(prefixPCres,"_Fig","_1b_","_lowres.tiff"))
 
 #### Figure 1c ####
-# for loop that saves UMAP of each Lot by cluster without cluster labels
+# for loop that saves UMAP of each Lot by cluster without cluster labels 
+# with the same dimensions as composite plot using the fixed cluster color scheme
 
+# fix cluster colors
+clust_cols <- c("0"="#F8766D","1"="#DB8E00","2"="#AEA200",
+                "3"="#64B200","4"="#00BD5C","5"="#00C1A7",
+                "6"="#00BADE","7"="#00A6FF","8"="#B385FF",
+                "9"="#EF67EB","10"="#FF63B6")
+
+# for loop
 for (i in 1:length(levels(s.integrated$Lot))){
   p <- (DimPlot(s.integrated, 
                 reduction = "umap", 
                 label = FALSE, 
                 pt.size = .25, 
-                cells = c(WhichCells(s.integrated, expression = Lot == levels(s.integrated$Lot)[i]))) + 
+                cells = c(WhichCells(s.integrated, expression = Lot == levels(s.integrated$Lot)[i])),
+                cols = clust_cols) + 
           NoLegend() +
           ggtitle(paste0(levels(s.integrated$Lot)[i])))
   
@@ -805,7 +824,6 @@ for (i in 1:length(levels(s.integrated$Lot))){
   lowrestiff(paste(prefixPCres,"Fig","1c",
                    levels(s.integrated$Lot)[i],"lowres.tiff",sep = "_"))
 }
-
 
 #### Figure 1d ####
 
