@@ -3,8 +3,7 @@ R script for:<br/>
 *Human iPSC-derived neural progenitor cells secreting GDNF provide protection in rodent models of ALS and retinal degeneration*<br/>
 <br/>
 Authors:<br/>
-&ensp;&ensp;Alexander H. Laperle<sup>1\*</sup>, Alexandra Moser<sup>1\*</sup>, Veronica J. Garcia<sup>1</sup>, Amanda Wu<sup>1</sup>, Aaron Fulton<sup>1</sup>, George Lawless<sup>1</sup>, Shaughn Bell<sup>1</sup>,<br/>
-&ensp;&ensp;Ritchie Ho<sup>1</sup>, Kristina Roxas<sup>1</sup>, Roksana Elder<sup>1</sup>, Pablo Avalos<sup>1</sup>, Bin Lu<sup>1</sup>,Staphany Ramirez<sup>1</sup>, Shaomei Wang<sup>1</sup>, Clive N. Svendsen<sup>1**</sup><br/>
+&ensp;&ensp;Alexander H. Laperle<sup>1\*</sup>, Alexandra Moser<sup>1\*</sup>, Veronica J. Garcia<sup>1</sup>, Amanda Wu<sup>1</sup>, Aaron Fulton<sup>1</sup>, George Lawless<sup>1</sup>, Shaughn Bell<sup>1</sup>, Ritchie Ho<sup>1</sup>, Kristina Roxas<sup>1</sup>, Roksana Elder<sup>1</sup>, Pablo Avalos<sup>1</sup>, Bin Lu<sup>1</sup>,Staphany Ramirez<sup>1</sup>, Shaomei Wang<sup>1</sup>, Clive N. Svendsen<sup>1**</sup><br/>
 <br/>
 Affiliations:<br/>
 &ensp;&ensp;<sup>1</sup> Cedars-Sinai Board of Governors Regenerative Medicine Institute, Cedars-Sinai Medical Center, Los Angeles CA<br/>
